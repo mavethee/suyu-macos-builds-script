@@ -19,37 +19,30 @@ https://github.com/yuzu-emu/yuzu
 
 ```
 $HOME && git clone https://github.com/mavethee/yuzu-macos-builds-script.git && cd yuzu-macos-builds-script
-
 ```
 
 ## 2. Move both scripts preferably to $HOME directory
 
 ```
 mv install_yuzu.sh $HOME && mv run_yuzu.sh $HOME
-
 ```
 
 ## 3. Make both scripts executable
 
 ```
-
 chmod +x $HOME/install_yuzu.sh && chmod +x $HOME/run_yuzu.sh
-
 ```
 
 ## 4. Run install_yuzu.sh
 
 ```
 $HOME/install_yuzu.sh
-
 ```
 
 ## 5. Run run_yuzu.sh
 
 ```
-
 $HOME/run_yuzu.sh
-
 ```
 
 ## 6. Enjoy!
