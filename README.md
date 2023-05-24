@@ -47,6 +47,10 @@ $HOME/run_yuzu.sh
 
 ## 6. Enjoy!
 
+Note: most of Yuzu's GUI crashes, you can't switch to controller or change default settings being stuck to keyboard controls listed below:
+
+<img src="https://media.discordapp.net/attachments/724306793819275309/1111011104810877029/image.png"/> 
+
 # Credits:
 
 - Yuzu team:
