@@ -27,31 +27,31 @@ $HOME && git clone https://github.com/mavethee/yuzu-macos-builds-script.git && c
 cd $HOME/yuzu-macos-builds-script && git pull origin main
 ```
 
-## 2. Move both scripts preferably to $HOME directory
+## 3. Move both scripts preferably to $HOME directory
 
 ```
 mv install_yuzu.sh $HOME && mv run_yuzu.sh $HOME
 ```
 
-## 3. Make both scripts executable
+## 4. Make both scripts executable
 
 ```
 chmod +x $HOME/install_yuzu.sh && chmod +x $HOME/run_yuzu.sh
 ```
 
-## 4. Run install_yuzu.sh
+## 5. Run install_yuzu.sh
 
 ```
 $HOME/install_yuzu.sh
 ```
 
-## 5. Run run_yuzu.sh
+## 6. Run run_yuzu.sh
 
 ```
 $HOME/run_yuzu.sh
 ```
 
-## 6. Enjoy!
+## 7. Enjoy!
 
 Note: Remember to repeat STEP 2 for eventual script changes, most of Yuzu's GUI crashes for now, you can't switch to controller or change default settings being stuck to keyboard controls listed below:
 
