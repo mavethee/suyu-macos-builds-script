@@ -21,6 +21,12 @@ https://github.com/yuzu-emu/yuzu
 $HOME && git clone https://github.com/mavethee/yuzu-macos-builds-script.git && cd yuzu-macos-builds-script
 ```
 
+## 2. Make sure cloned repo is up to date!
+
+```
+cd $HOME/yuzu-macos-builds-script && git pull origin main
+```
+
 ## 2. Move both scripts preferably to $HOME directory
 
 ```
@@ -47,7 +53,7 @@ $HOME/run_yuzu.sh
 
 ## 6. Enjoy!
 
-Note: most of Yuzu's GUI crashes, you can't switch to controller or change default settings being stuck to keyboard controls listed below:
+Note: Remember to repeat STEP 2 for eventual script changes, most of Yuzu's GUI crashes for now, you can't switch to controller or change default settings being stuck to keyboard controls listed below:
 
 <img src="https://media.discordapp.net/attachments/724306793819275309/1111011104810877029/image.png"/> 
 
