@@ -17,33 +17,7 @@ CORES=$(sysctl -n hw.ncpu)
 cd $HOME
 
 # Install needed dependencies
-brew install autoconf automake boost ccache ffmpeg glslang hidapi libtool libusb lz4 ninja nlohmann-json openssl pkg-config qt@5 sdl2 speexdsp zlib zstd molten-vk vulkan-loader
-
-# Check if fmt is installed from Homebrew and remove it
-if brew ls --versions fmt > /dev/null; then
-    echo -e "${PURPLE}Removing existing fmt installation...${NC}"
-    brew uninstall fmt
-fi
-
-# Check if fmt is already installed using pkg-config
-if pkg-config --list-all | grep -q "fmt"; then
-    echo -e "${PURPLE}fmt is already installed. Skipping building from source.${NC}"
-else
-    # Build fmt version 9.10
-    echo -e "${PURPLE}Building fmt version 9.10...${NC}"
-    mkdir -p ~/fmt-build && cd ~/fmt-build
-    git clone --branch 9.1.0 --depth 1 https://github.com/fmtlib/fmt.git
-    cd fmt
-    cmake -B build
-    make -j${CORES}
-    sudo make install
-
-    # Cleanup fmt build files
-    cd ~
-    rm -rf ~/fmt-build
-
-    echo -e "${PURPLE}fmt version 9.10 has been successfully built and installed.${NC}"
-fi
+brew install autoconf fmt automake boost ccache ffmpeg glslang hidapi libtool libusb lz4 ninja nlohmann-json openssl pkg-config qt@5 sdl2 speexdsp zlib zstd molten-vk vulkan-loader
 
 # Clone the Yuzu repository if not already cloned
 if [ ! -d "yuzu" ]; then
