@@ -15,37 +15,37 @@ https://github.com/yuzu-emu/yuzu
 
 # Instructions:
 
-## 1. Clone the repository (or Code -> Download ZIP)
+## 1. Clone the repository (or Code -> Download ZIP):
 
 ```
 $HOME && git clone https://github.com/mavethee/yuzu-macos-builds-script.git && cd yuzu-macos-builds-script
 ```
 
-## 2. Make sure cloned repo is up to date!
+## 2. Make sure cloned repo is up to date:
 
 ```
 cd $HOME/yuzu-macos-builds-script && git pull origin main
 ```
 
-## 3. Move both scripts preferably to $HOME directory
+## 3. Move both scripts preferably to $HOME directory:
 
 ```
-mv install_yuzu.sh $HOME && mv run_yuzu.sh $HOME
+mv build_yuzu.sh $HOME && mv run_yuzu.sh $HOME
 ```
 
-## 4. Make both scripts executable
+## 4. Make both scripts executable:
 
 ```
-chmod +x $HOME/install_yuzu.sh && chmod +x $HOME/run_yuzu.sh
+chmod +x $HOME/build_yuzu.sh && chmod +x $HOME/run_yuzu.sh
 ```
 
-## 5. Run install_yuzu.sh
+## 5. Run building script:
 
 ```
-$HOME/install_yuzu.sh
+$HOME/build_yuzu.sh
 ```
 
-## 6. Run run_yuzu.sh
+## 6. Run executing script:
 
 ```
 $HOME/run_yuzu.sh
