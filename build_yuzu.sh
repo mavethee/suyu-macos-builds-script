@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-echo -e "${PURPLE}Checking for Homberew installation...${NC}"
+echo -e "${PURPLE}Checking for Homebrew installation...${NC}"
 
 # Check if Homebrew is installed
 if ! command -v brew &> /dev/null; then
@@ -81,13 +81,14 @@ else
     echo "No matching line found in CMakeLists.txt. No modification needed."
 fi
 
-
-
 echo -e "${PURPLE}Exporting necessary environment variables...${NC}"
 
 # Export necessary environment variables
 export Qt5_DIR=$(brew --prefix)/opt/qt@5/lib/cmake
 export LLVM_DIR=$(brew --prefix)/opt/llvm@16
+export FFMPEG_DIR=$(brew --prefix)/opt/ffmpeg
+export cubeb_DIR=$(brew --prefix)/opt/cubeb
+
 
 echo -e "${PURPLE}Creating build folder...${NC}"
 
@@ -106,7 +107,7 @@ ninja -j${CORES}
 
 # Check if the build was successful
 if [ $? -eq 0 ]; then
-    echo "Build successful."
+    echo -e "Build ${GREEN}successful${NC}."
 
     # Remove existing yuzu.app if it exists in /Applications
     if [ -d "/Applications/yuzu.app" ]; then
@@ -125,5 +126,5 @@ if [ $? -eq 0 ]; then
     cd "$HOME/yuzu"
     rm -rf build
 else
-    echo "Build failed. Please check the build output for errors."
+    echo -e "Build ${RED}failed${NC}. Please check the build output for errors."
 fi
