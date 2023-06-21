@@ -45,42 +45,6 @@ else
     git submodule update --init --recursive
 fi
 
-echo -e "${PURPLE}Looking for nx_tzdb's CMakeLists.txt...${NC}"
-
-# Define the path to the CMakeLists.txt file
-CMAKE_LISTS_FILE="/Users/$(whoami)/yuzu/externals/nx_tzdb/tzdb_to_nx/src/tzdb/CMakeLists.txt"
-
-# Define the line to search for and its replacement
-SEARCH_LINE='${GNU_DATE} +%y%m%d --date=@${TZ_COMMIT_TIME}'
-REPLACE_LINE='${GNU_DATE} +%y%m%d'
-
-# Function to replace the line in CMakeLists.txt
-replace_line_in_cmake() {
-    if [ -f "$CMAKE_LISTS_FILE" ]; then
-        echo "CMakeLists.txt file found at path: $CMAKE_LISTS_FILE"
-
-        # Replace the line using sed
-        sed -i '' "s|${SEARCH_LINE}|${REPLACE_LINE}|g" "$CMAKE_LISTS_FILE"
-
-        # Check if the replacement was successful
-        if [ $? -eq 0 ]; then
-            echo "Fixed macOS incompatible arguments in CMakeLists.txt."
-        else
-            echo "Failed to fix macOS incompatible arguments in CMakeLists.txt. Build script may fail with line 27!"
-        fi
-    else
-        echo "CMakeLists.txt file not found at path: $CMAKE_LISTS_FILE"
-    fi
-}
-
-# Check if the CMakeLists.txt file needs line replacement
-if grep -q "$SEARCH_LINE" "$CMAKE_LISTS_FILE"; then
-    echo "Found line to replace: $SEARCH_LINE"
-    replace_line_in_cmake
-else
-    echo "No matching line found in CMakeLists.txt. No modification needed."
-fi
-
 echo -e "${PURPLE}Exporting necessary environment variables...${NC}"
 
 # Export necessary environment variables
