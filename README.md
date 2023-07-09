@@ -7,6 +7,7 @@ This script will build and compile Yuzu for macOS.
 Remember to not expect miracles, it's not ready for end users yet. The macOS build is still in development!
 
 This script is based off of these build instructions:
+
 https://yuzu-emu.org/wiki/building-for-macos/
 
 ## Original Yuzu's repository:
