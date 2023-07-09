@@ -4,9 +4,9 @@
 
 This script will build and compile Yuzu for macOS.
 
-Remember to not expect miracles, its not ready for end users yet, macOS build is still in development!
+Remember to not expect miracles, it's not ready for end users yet. The macOS build is still in development!
 
-This script is based of build instructions:
+This script is based off of these build instructions:
 https://yuzu-emu.org/wiki/building-for-macos/
 
 ## Original Yuzu's repository:
@@ -15,10 +15,10 @@ https://github.com/yuzu-emu/yuzu
 
 # Instructions:
 
-## 1. Clone the repository (or Code -> Download ZIP):
+## 1. Clone the repository (or Code -> Download ZIP). Examples here use the $HOME directory:
 
 ```
-$HOME && git clone https://github.com/mavethee/yuzu-macos-builds-script.git && cd yuzu-macos-builds-script
+$HOME && git clone https://github.com/mavethee/yuzu-macos-builds-script.git
 ```
 
 ## 2. Make sure cloned repo is up to date:
@@ -27,35 +27,31 @@ $HOME && git clone https://github.com/mavethee/yuzu-macos-builds-script.git && c
 cd $HOME/yuzu-macos-builds-script && git pull origin main
 ```
 
-## 3. Move both scripts preferably to $HOME directory:
+## 3. Move the script to a location on your drive:
 
 ```
-mv build_yuzu.sh $HOME && mv run_yuzu.sh $HOME
+mv build_yuzu.sh $HOME
 ```
 
-## 4. Make both scripts executable:
+## 4. Make the script executable:
 
 ```
-chmod +x $HOME/build_yuzu.sh && chmod +x $HOME/run_yuzu.sh
+chmod +x $HOME/build_yuzu.sh
 ```
 
-## 5. Run building script:
+## 5. Run the build script:
 
 ```
 $HOME/build_yuzu.sh
 ```
 
-## 6. Run executing script:
+## 6. Enjoy!
 
-```
-$HOME/run_yuzu.sh
-```
-
-## 7. Enjoy!
-
-Note: Remember to repeat STEP 2 for eventual script changes, most of Yuzu's GUI crashes for now, you can't switch to controller or change default settings being stuck to keyboard controls listed below:
-
-<img src="https://media.discordapp.net/attachments/724306793819275309/1111011104810877029/image.png"/> 
+Note: Remember to repeat STEP 2 for future script changes. </br>
+Yuzu currently does not support a lot of required features such as Geometry Shaders or Transform Feedback Buffers. </br>
+If a game you are trying to play uses these features, it will crash.
+If you want to know what missing feature is causing the crash, run yuzu through Terminal. </br>
+The situation will get better in the future as MoltenVK adds support for more features.
 
 # Credits:
 
