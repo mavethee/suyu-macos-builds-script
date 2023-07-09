@@ -53,14 +53,6 @@ If a game you are trying to play uses these features, it will crash.
 If you want to know what missing feature is causing the crash, run yuzu through Terminal. </br>
 The situation will get better in the future as MoltenVK adds support for more features.
 
-## Known working games: 
-Here is a list of some games that have been tested and go in-game. It is not a complete list, there are probably more that work: 
-- Persona 5 Royal
-- Return of the Obra Dinn
-- Salt & Sanctuary
-- Final Fantasy Pixel Remasters
-- Hollow Knight
-
 # Credits:
 
 - Yuzu team:
