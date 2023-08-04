@@ -26,7 +26,7 @@ CORES=$(sysctl -n hw.ncpu)
 cd "$HOME"
 
 # Install needed dependencies
-brew install autoconf enet inih cubeb fmt automake boost ccache ffmpeg glslang hidapi libtool libusb lz4 ninja nlohmann-json openssl pkg-config qt@5 sdl2 speexdsp zlib zstd molten-vk vulkan-loader
+brew install autoconf enet inih cubeb fmt automake boost ccache ffmpeg glslang hidapi libtool libusb lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp zlib zstd molten-vk vulkan-loader
 
 echo -e "${PURPLE}Cloning or updating Yuzu repository...${NC}"
 
@@ -48,7 +48,6 @@ fi
 echo -e "${PURPLE}Exporting necessary environment variables...${NC}"
 
 # Export necessary environment variables
-export Qt5_DIR=$(brew --prefix)/opt/qt@5/lib/cmake
 export LLVM_DIR=$(brew --prefix)/opt/llvm@16
 export FFMPEG_DIR=$(brew --prefix)/opt/ffmpeg
 export cubeb_DIR=$(brew --prefix)/opt/cubeb
@@ -62,7 +61,7 @@ mkdir -p build && cd build
 echo -e "${PURPLE}Running CMake...${NC}"
 
 # Run CMake with specified options
-cmake .. -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DYUZU_USE_BUNDLED_VCPKG=OFF -DYUZU_TESTS=OFF -DENABLE_WEB_SERVICE=OFF -DENABLE_LIBUSB=OFF -DSDL_ARMNEON=ON
+cmake .. -GNinja -DCMAKE_BUILD_TYPE=RELEASE -DYUZU_USE_BUNDLED_VCPKG=OFF -DYUZU_TESTS=OFF -DENABLE_WEB_SERVICE=OFF -DENABLE_LIBUSB=OFF -DSDL_ARMNEON=ON -DENABLE_QT6=ON -DYUZU_USE_EXTERNAL_VULKAN_HEADERS=OFF
 
 echo -e "${PURPLE}Building Yuzu...${NC}"
 
