@@ -10,6 +10,8 @@ Jest to lista wybranych przetestowanych gier, które działają poza ekranem tyt
 - Salt & Sanctuary
 - Final Fantasy Pixel Remasters
 - Hollow Knight
+- Red Dead Redemption
+
 ## Znane niedziałające tytuły:
 Jest to lista wybranych przetestowanych gier które nie uruchamiają się wcale lub poza ekran tytułowy. Nie jest to kompletna lista, jest ich na pewno więcej.
 
