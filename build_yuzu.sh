@@ -77,11 +77,6 @@ if [ $? -eq 0 ]; then
         echo -e "${PURPLE}Removing existing yuzu.app in /Applications...${NC}"
         rm -rf "/Applications/yuzu.app"
     fi
-
-    echo -e "${PURPLE}Copying libraries to yuzu.app...${NC}"
-
-    mkdir ./bin/yuzu.app/Contents/Frameworks
-    cp /opt/homebrew/lib/libvulkan.dylib ./bin/yuzu.app/Contents/Frameworks/libvulkan.dylib
     
     echo -e "${PURPLE}Moving yuzu.app to /Applications...${NC}"
 
