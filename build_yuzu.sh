@@ -40,12 +40,8 @@ else
 
     echo -e "${PURPLE}Fetching latest changes...${NC}"
     
-    # Fetch latest changes and list commit messages
     git fetch origin master
-    git log HEAD..origin/master --oneline
 
-    echo -e "${PURPLE}Pulling latest changes...${NC}"
-    
     # Pull latest changes
     git pull origin master
 
