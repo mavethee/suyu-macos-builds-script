@@ -37,6 +37,16 @@ if [ ! -d "yuzu" ]; then
 else
     echo "Yuzu repository already exists. Updating..."
     cd yuzu
+
+    echo -e "${PURPLE}Fetching latest changes...${NC}"
+    
+    # Fetch latest changes and list commit messages
+    git fetch origin master
+    git log HEAD..origin/master --oneline
+
+    echo -e "${PURPLE}Pulling latest changes...${NC}"
+    
+    # Pull latest changes
     git pull origin master
 
     echo -e "${PURPLE}Updating submodules...${NC}"
@@ -51,7 +61,6 @@ echo -e "${PURPLE}Exporting necessary environment variables...${NC}"
 export LLVM_DIR=$(brew --prefix)/opt/llvm@16
 export FFMPEG_DIR=$(brew --prefix)/opt/ffmpeg
 export cubeb_DIR=$(brew --prefix)/opt/cubeb
-
 
 echo -e "${PURPLE}Creating build folder...${NC}"
 
