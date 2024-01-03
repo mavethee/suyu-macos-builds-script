@@ -54,7 +54,7 @@ fi
 echo -e "${PURPLE}Exporting necessary environment variables...${NC}"
 
 # Export necessary environment variables
-export LLVM_DIR=$(brew --prefix)/opt/llvm@16
+export LLVM_DIR=$(brew --prefix)/opt/llvm@17
 export FFMPEG_DIR=$(brew --prefix)/opt/ffmpeg
 export cubeb_DIR=$(brew --prefix)/opt/cubeb
 
