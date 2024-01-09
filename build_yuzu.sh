@@ -26,7 +26,7 @@ CORES=$(sysctl -n hw.ncpu)
 cd "$HOME"
 
 # Install needed dependencies
-brew install autoconf automake boost ccache cubeb enet ffmpeg fmt glslang hidapi inih libtool libusb llvm@17 lz4 molten-vk ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd
+brew install autoconf automake boost ccache cubeb enet ffmpeg fmt gettext glslang hidapi inih libtool libusb llvm@17 lz4 molten-vk ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd
 
 echo -e "${PURPLE}Cloning or updating Yuzu repository...${NC}"
 
