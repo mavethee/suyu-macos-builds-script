@@ -6,7 +6,7 @@
 Here is a list of some games that have been tested and go in-game. It is not a complete list, there are probably more that work.
 
 - Batman: Arkham Asylum
-- Catharine: Full-body
+- Catherine: Full-body
 - Dead Cells
 - Final Fantasy Pixel Remasters
 - GrimGrimoire
