@@ -1,14 +1,15 @@
 <img src="https://raw.githubusercontent.com/yuzu-emu/yuzu-assets/master/icons/icon.png" width="10%" height="10%"/> 
 
-## Yuzu's macOS builds compiling script
+## Build script for compiling Yuzu on Apple Silicon
 
 [🇵🇱 Szukasz Polskiego? Kliknij tutaj](README_pl_PL.md) [🇺🇸 You are reading English version](README.md)
 
-This script will build and compile Yuzu for macOS.
+This script will build and compile Yuzu for macOS on Apple Silicon.
 
-Remember to not expect miracles, it's not ready for end users yet. 
-
-The macOS build is still in development!
+> [!WARNING]
+> This script is provided for experimentation purposes.<br> 
+> Don't expect high compatibility, there are reasons why an official Mac build hasn't been released yet.<br>
+> The macOS build is still in development!
 
 This script is based off of these build instructions:
 
@@ -18,15 +19,16 @@ https://yuzu-emu.org/wiki/building-for-macos/
 
 https://github.com/yuzu-emu/yuzu
 
-[![Download](https://img.shields.io/badge/Download-v0.0.1-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.1/build_yuzu.sh)
+[![Download](https://img.shields.io/badge/Download-v0.0.2-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.2/build_yuzu.sh)
 
 ## Usage:
 
-After downloading, double click and follow the prompts.
+After downloading, double click the script and follow the prompts.
 
-Preferrably execute in your home directory.
+It is advised to run it from your home directory.
 
-On base M1, building takes ~4mins (measured including gathering needed dependencies which differs on your internet speed)
+> [!NOTE]
+> On a base M1, building takes ~4mins (measured including gathering needed dependencies which differs depending on your internet speed)
 
 In case of any permission issues, run:
 
@@ -34,15 +36,15 @@ In case of any permission issues, run:
 chmod +x ./build_yuzu.sh
 ```
 
-Yuzu currently does not support a lot of required features such as Geometry Shaders or Transform Feedback Buffers. </br>
-If a game you are trying to play uses these features, it will crash.
-If you want to know what missing feature is causing the crash, run yuzu through Terminal: </br>
-
-```
-/Applications/yuzu.app/Contents/MacOS/yuzu
-```
-
-The situation will get better in the future as MoltenVK adds support for more features.
+> [!NOTE]
+> Yuzu currently does not support a lot of required features.<br>
+> If a game you are trying to play uses these features, it will crash. <br>
+> If you want to know what missing feature is causing the crash, run yuzu through Terminal:
+>
+> ```
+> /Applications/yuzu.app/Contents/MacOS/yuzu
+> ```
+> The situation will get better in the future as MoltenVK adds support for more features.
 
 ## Check current compatibility:
 
