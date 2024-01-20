@@ -15,6 +15,7 @@ Here is a list of some games that have been tested and go in-game. It is not a c
 - Red Dead Redemption
 - Return of the Obra Dinn
 - Salt & Sanctuary
+
 ## Known non-working games:
 Here is a list of some games that have been tested and do not go in-game. It is not a complete list, there are probably more that don't work.
 

@@ -18,7 +18,7 @@ https://yuzu-emu.org/wiki/building-for-macos/
 
 https://github.com/yuzu-emu/yuzu
 
-[![Pobierz](https://img.shields.io/badge/Download-v0.0.1-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.1/build_yuzu.sh)
+[![Pobierz](https://img.shields.io/badge/Download-v0.0.3-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.3/build_yuzu.sh)
 
 ## Użytkowanie:
 
@@ -26,23 +26,21 @@ Po pobraniu, otwórz podwójnym klinięciem i postępuj zgodnie z poleceniami.
 
 Preferowane odpalenie skryptu w katalogu domowym.
 
-Na podstawowej konfiguracji z M1, kompilowanie trwa ~4 minuty (pomiar wraz z pobieraniem potrzebnych programów, zależne od twojego połączenia internetowego).
+> [!UWAGA]
+> W przypadku podstawowej konfiguracji na M1, kompilacja trwa ~4mins (pomiar zawiera również pobieranie potrzebnych plików do kompilacji, zależne od szybkości połączenia)
+> W razie problemów z uprawnieniami:
+> ```
+> chmod +x ./build_yuzu.sh
+> ```
 
-Wrazie problemów z uprawnieniami:
-
-```
-chmod +x ./build_yuzu.sh
-```
-
-Obecnie yuzu nie wspiera wielu wymaganych funkcji jak na przykład Geometry Shaders lub Transform Feedback Buffers.</br>
-Jeśli twoja gra używa niewspieranych funkcji, yuzu się scrashuje.
-Jeśli chcesz poznać szczegóły na temat crasha danej gry, odpal Yuzu za pomocą Terminala: </br>
-
-```
-/Applications/yuzu.app/Contents/MacOS/yuzu
-```
-
-Sytuacja może ulec zmianie w przyszłości, gdy tylko MoltenVK doda wspracie dla większej ilości funkcji.
+> [!UWAGA]
+> Obecnie yuzu nie wspiera wielu wymaganych funkcji jak na przykład Geometry Shaders lub Transform Feedback Buffers.
+> Jeśli twoja gra używa niewspieranych funkcji, yuzu się scrashuje.
+> Jeśli chcesz poznać szczegóły na temat crasha danej gry, odpal Yuzu za pomocą Terminala:
+> ```
+> /Applications/yuzu.app/Contents/MacOS/yuzu
+> ```
+> Sytuacja może ulec zmianie w przyszłości, gdy tylko MoltenVK doda wspracie dla większej ilości funkcji.
 
 ## Sprawdź obecną kompatybilność:
 

@@ -28,26 +28,23 @@ cd "$HOME"
 # Install needed dependencies
 brew install autoconf automake boost ccache cubeb enet ffmpeg fmt glslang hidapi inih libtool libusb llvm@17 lz4 molten-vk ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd
 
-echo -e "${PURPLE}Cloning or updating Yuzu repository...${NC}"
-
 # Clone the Yuzu repository if not already cloned
 if [ ! -d "yuzu" ]; then
+    echo -e "${PURPLE}Cloning Yuzu repository...${NC}"
     git clone --recursive https://github.com/yuzu-emu/yuzu
     cd yuzu
 else
-    echo "Yuzu repository already exists. Updating..."
+    echo -e "${PURPLE}Yuzu repository already exists. Updating...${NC}"
     cd yuzu
 
     echo -e "${PURPLE}Fetching latest changes...${NC}"
     
     git fetch origin master
 
-    # Pull latest changes
-    git pull origin master
+    echo -e "${PURPLE}Removing existing submodules...${NC}"
+    git submodule deinit -f .
 
-    echo -e "${PURPLE}Updating submodules...${NC}"
-
-    # Update submodules
+    echo -e "${PURPLE}Fetching new submodules...${NC}"
     git submodule update --init --recursive
 fi
 

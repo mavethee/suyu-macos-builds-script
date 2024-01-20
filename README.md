@@ -19,7 +19,7 @@ https://yuzu-emu.org/wiki/building-for-macos/
 
 https://github.com/yuzu-emu/yuzu
 
-[![Download](https://img.shields.io/badge/Download-v0.0.2-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.2/build_yuzu.sh)
+[![Download](https://img.shields.io/badge/Download-v0.0.3-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.3/build_yuzu.sh)
 
 ## Usage:
 
@@ -29,12 +29,10 @@ It is advised to run it from your home directory.
 
 > [!NOTE]
 > On a base M1, building takes ~4mins (measured including gathering needed dependencies which differs depending on your internet speed)
-
-In case of any permission issues, run:
-
-```
-chmod +x ./build_yuzu.sh
-```
+> In case of any permission issues, run:
+> ```
+> chmod +x ./build_yuzu.sh
+> ```
 
 > [!NOTE]
 > Yuzu currently does not support a lot of required features.<br>
