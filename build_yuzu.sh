@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 # ANSI color codes
 PURPLE='\033[0;35m'
@@ -19,14 +19,27 @@ fi
 
 echo -e "${PURPLE}Heading to home directory...${NC}"
 
-# Amount of available cores:
-CORES=$(sysctl -n hw.ncpu)
-
 # Change directory to $HOME
 cd "$HOME"
 
+
 # Install needed dependencies
-brew install autoconf automake boost ccache cubeb enet ffmpeg fmt glslang hidapi inih libtool libusb llvm@17 lz4 molten-vk ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd
+echo -e "${PURPLE}Checking for Homebrew dependencies...${NC}"
+brew_install() {
+	if [ -d "$(brew --prefix)/opt/$1" ]; then
+		echo -e "${GREEN}found $1...${NC}"
+	else
+ 		echo -e "${PURPLE}Did not find $1. Installing...${NC}"
+		brew install $1
+	fi
+}
+
+deps=( autoconf automake boost ccache cubeb enet ffmpeg fmt glslang hidapi inih libtool libusb llvm@17 lz4 molten-vk ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
+
+for dep in $deps[@]
+do 
+	brew_install $dep
+done
 
 # Clone the Yuzu repository if not already cloned
 if [ ! -d "yuzu" ]; then
@@ -67,8 +80,8 @@ cmake .. -GNinja -DCMAKE_BUILD_TYPE=RELEASE -DYUZU_USE_BUNDLED_VCPKG=OFF -DYUZU_
 
 echo -e "${PURPLE}Building Yuzu...${NC}"
 
-# Build Yuzu using Ninja with all available cores
-ninja -j${CORES}
+# Build Yuzu using Ninja
+ninja
 
 # Check if the build was successful
 if [ $? -eq 0 ]; then
