@@ -19,9 +19,6 @@ fi
 
 echo -e "${PURPLE}Heading to home directory...${NC}"
 
-# Amount of available cores:
-CORES=$(sysctl -n hw.ncpu)
-
 # Change directory to $HOME
 cd "$HOME"
 
@@ -80,8 +77,8 @@ cmake .. -GNinja -DCMAKE_BUILD_TYPE=RELEASE -DYUZU_USE_BUNDLED_VCPKG=OFF -DYUZU_
 
 echo -e "${PURPLE}Building Yuzu...${NC}"
 
-# Build Yuzu using Ninja with all available cores
-ninja -j${CORES}
+# Build Yuzu using Ninja
+ninja
 
 # Check if the build was successful
 if [ $? -eq 0 ]; then
