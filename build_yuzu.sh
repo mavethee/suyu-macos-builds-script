@@ -33,7 +33,7 @@ brew_install() {
 
 deps=( autoconf automake boost ccache cubeb enet ffmpeg fmt glslang hidapi inih libtool libusb llvm@17 lz4 molten-vk ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
 
-for dep in "${deps[@]}"
+for dep in $deps[@]
 do 
 	brew_install $dep
 done
