@@ -22,7 +22,9 @@ echo -e "${PURPLE}Heading to home directory...${NC}"
 # Change directory to $HOME
 cd "$HOME"
 
+
 # Install needed dependencies
+echo -e "${PURPLE}Checking for Homebrew dependencies...${NC}"
 brew_install() {
 	if [ -d "$(brew --prefix)/opt/$1" ]; then
 		echo "$1 found"
