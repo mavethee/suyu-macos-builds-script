@@ -24,7 +24,7 @@ cd "$HOME"
 
 # Install needed dependencies
 brew_install() {
-	if brew list $1 &>/dev/null; then
+	if brew list --versions $1 &>/dev/null; then
 		echo "$1 found"
 	else
 		brew install $1
