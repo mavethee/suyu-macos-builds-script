@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 # ANSI color codes
 PURPLE='\033[0;35m'
