@@ -26,7 +26,20 @@ CORES=$(sysctl -n hw.ncpu)
 cd "$HOME"
 
 # Install needed dependencies
-brew install autoconf automake boost ccache cubeb enet ffmpeg fmt glslang hidapi inih libtool libusb llvm@17 lz4 molten-vk ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd
+brew_install() {
+	if brew list $1 &>/dev/null; then
+		echo "$1 found"
+	else
+		brew install $1
+	fi
+}
+
+deps=( autoconf automake boost ccache cubeb enet ffmpeg fmt glslang hidapi inih libtool libusb llvm@17 lz4 molten-vk ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
+
+for dep in "${deps[@]}"
+do 
+	brew_install $dep
+done
 
 # Clone the Yuzu repository if not already cloned
 if [ ! -d "yuzu" ]; then
