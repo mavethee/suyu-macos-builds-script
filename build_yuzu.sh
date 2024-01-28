@@ -14,7 +14,7 @@ if ! command -v brew &> /dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
     echo -e "${PURPLE}Homebrew found. Updating Homebrew...${NC}"
-    brew update && brew upgrade
+    brew update
 fi
 
 echo -e "${PURPLE}Heading to home directory...${NC}"
@@ -22,12 +22,13 @@ echo -e "${PURPLE}Heading to home directory...${NC}"
 # Change directory to $HOME
 cd "$HOME"
 
-
 # Install needed dependencies
 echo -e "${PURPLE}Checking for Homebrew dependencies...${NC}"
 brew_install() {
 	if [ -d "$(brew --prefix)/opt/$1" ]; then
-		echo -e "${GREEN}found $1...${NC}"
+		echo -e "${GREEN}Found $1...${NC}"
+  		echo -e "${GREEN}Updating $1...${NC}"
+    		brew upgrade $1
 	else
  		echo -e "${PURPLE}Did not find $1. Installing...${NC}"
 		brew install $1
