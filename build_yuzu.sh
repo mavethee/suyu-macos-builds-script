@@ -29,7 +29,7 @@ brew_dependency_check() {
 		echo -e "${GREEN}Found $1. Checking for updates...${NC}"
     		brew upgrade $1
 	else
- 		echo -e "${PURPLE}Did not find $1. Installing...${NC}"
+ 		echo -e "${PURPLE}Could not find $1. Installing...${NC}"
 		brew install $1
 	fi
 }
@@ -47,13 +47,14 @@ if [ ! -d "yuzu" ]; then
     git clone --recursive https://github.com/yuzu-emu/yuzu
     cd yuzu
 else
-    echo -e "${PURPLE}Yuzu repository already exists. Updating...${NC}"
+    echo -e "${PURPLE}Yuzu repository already exists. Checking for updates...${NC}"
     cd yuzu
 
     echo -e "${PURPLE}Fetching latest changes...${NC}"
     
     git fetch origin master
 
+    # This only exist to avoid issues I had, but most of the time, just updating submodules work.
     echo -e "${PURPLE}Removing existing submodules...${NC}"
     git submodule deinit -f .
 
@@ -85,7 +86,7 @@ ninja
 
 # Check if the build was successful
 if [ $? -eq 0 ]; then
-    echo -e "Build ${GREEN}successful${NC}."
+    echo -e "${GREEN}Build successful${NC}."
 
     # Remove existing yuzu.app if it exists in /Applications
     if [ -d "/Applications/yuzu.app" ]; then
@@ -98,11 +99,11 @@ if [ $? -eq 0 ]; then
     # Move yuzu.app to /Applications
     mv bin/yuzu.app /Applications/
 
-    echo -e "${PURPLE}Installation completed.${NC}"
+    echo -e "${GREEN}Installation completed.${NC}"
 
     # Remove build folder
     cd "$HOME/yuzu"
     rm -rf build
 else
-    echo -e "Build ${RED}failed${NC}. Please check the build output for errors."
+    echo -e "${RED}Build failed. Please check the build output for errors.${NC}"
 fi
