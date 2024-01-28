@@ -26,14 +26,14 @@ Po pobraniu, otwórz podwójnym klinięciem i postępuj zgodnie z poleceniami.
 
 Preferowane odpalenie skryptu w katalogu domowym.
 
-> [!UWAGA]
+> [!NOTE]
 > W przypadku podstawowej konfiguracji na M1, kompilacja trwa ~4mins (pomiar zawiera również pobieranie potrzebnych plików do kompilacji, zależne od szybkości połączenia)
 > W razie problemów z uprawnieniami:
 > ```
 > chmod +x ./build_yuzu.sh
 > ```
 
-> [!UWAGA]
+> [!NOTE]
 > Obecnie yuzu nie wspiera wielu wymaganych funkcji jak na przykład Geometry Shaders lub Transform Feedback Buffers.
 > Jeśli twoja gra używa niewspieranych funkcji, yuzu się scrashuje.
 > Jeśli chcesz poznać szczegóły na temat crasha danej gry, odpal Yuzu za pomocą Terminala:
@@ -85,17 +85,13 @@ Notka: Pamiętaj o powtórzeniu kroku drugiego co jakiś czas, aby mieć najaktu
 
 ## Podziękowania:
 
-- Yuzu team:
+-   Niezawodnego teamu Yuzu, [zrzutka im na piwerko mile widziana 🍺](https://www.patreon.com/yuzuteam)
 
-    https://github.com/yuzu-emu
-
-    (🍺 Postawcie im piwo: https://www.patreon.com/yuzuteam)
+-   [@shinra-electric](https://github.com/shinra-electric) za wszelkie poprawki do mojego pijackiego kodu! 🍻
 
 - Instrukcje kompilacji projektu na macOS:
 
     https://yuzu-emu.org/wiki/building-for-macos/
-
-    ...i ChatGPT wraz z GitHub Copilot za umożliwienie publikacji mojego pijackiego kodu.
 
     Jeśli zostanę pozwany przez Big N, zapraszam na mój grób ^^
 

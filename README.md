@@ -84,19 +84,16 @@ $HOME/build_yuzu.sh
 ## 6. Enjoy!
 
 Note: Remember to repeat STEP 2 for future script changes. </br>
-## Credits:
 
-- Yuzu team:
+## Special thanks to:
 
-    https://github.com/yuzu-emu
+- The one and only [Yuzu's team](ttps://github.com/yuzu-emu), of course. [🍺 Give those dudes a tip here!](https://www.patreon.com/yuzuteam)
 
-    (🍺 Give those dudes a tip here: https://www.patreon.com/yuzuteam)
-
-- Yuzu's macOS build instructios:
-
-    https://yuzu-emu.org/wiki/building-for-macos/
+- [Yuzu's macOS build instructions](https://yuzu-emu.org/wiki/building-for-macos/)
 
     ...and ChatGPT with GitHub Copilot for making my drunkass shell coding public.
+
+- [@shinra-electric](https://github.com/shinra-electric) for helping me maintain it and bringing some code quality 🍺
 
     If I get sued by Big N, come visit my grave ^^
 
