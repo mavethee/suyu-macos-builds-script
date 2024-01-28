@@ -24,7 +24,7 @@ cd "$HOME"
 
 # Install needed dependencies
 echo -e "${PURPLE}Checking for Homebrew dependencies...${NC}"
-brew_install() {
+brew_dependency_check() {
 	if [ -d "$(brew --prefix)/opt/$1" ]; then
 		echo -e "${GREEN}Found $1. Checking for updates...${NC}"
     		brew upgrade $1
@@ -38,7 +38,7 @@ deps=( autoconf automake boost ccache cubeb enet ffmpeg fmt glslang hidapi inih 
 
 for dep in $deps[@]
 do 
-	brew_install $dep
+	brew_dependency_check $dep
 done
 
 # Clone the Yuzu repository if not already cloned
