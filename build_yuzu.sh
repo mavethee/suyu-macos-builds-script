@@ -26,8 +26,7 @@ cd "$HOME"
 echo -e "${PURPLE}Checking for Homebrew dependencies...${NC}"
 brew_install() {
 	if [ -d "$(brew --prefix)/opt/$1" ]; then
-		echo -e "${GREEN}Found $1...${NC}"
-  		echo -e "${GREEN}Updating $1...${NC}"
+		echo -e "${GREEN}Found $1. Checking for updates...${NC}"
     		brew upgrade $1
 	else
  		echo -e "${PURPLE}Did not find $1. Installing...${NC}"
