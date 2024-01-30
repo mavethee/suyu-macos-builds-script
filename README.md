@@ -11,13 +11,7 @@ This script will build and compile Yuzu for macOS on Apple Silicon.
 > Don't expect high compatibility, there are reasons why an official Mac build hasn't been released yet.<br>
 > The macOS build is still in development!
 
-This script is based off of these build instructions:
-
-https://yuzu-emu.org/wiki/building-for-macos/
-
-## Original Yuzu's repository:
-
-https://github.com/yuzu-emu/yuzu
+Get it from here!
 
 [![Download](https://img.shields.io/badge/Download-v0.0.3-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.3/build_yuzu.sh)
 
