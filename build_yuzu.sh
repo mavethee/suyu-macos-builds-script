@@ -34,7 +34,7 @@ brew_install() {
 	fi
 }
 
-deps=( autoconf automake boost ccache cubeb enet ffmpeg fmt glslang hidapi inih libtool libusb llvm@17 lz4 molten-vk ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
+deps=( autoconf automake boost ccache cmake ffmpeg fmt glslang hidapi libtool libusb llvm@17 lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
 
 for dep in $deps[@]
 do 
@@ -66,7 +66,6 @@ echo -e "${PURPLE}Exporting necessary environment variables...${NC}"
 # Export necessary environment variables
 export LLVM_DIR=$(brew --prefix)/opt/llvm@17
 export FFMPEG_DIR=$(brew --prefix)/opt/ffmpeg
-export cubeb_DIR=$(brew --prefix)/opt/cubeb
 
 echo -e "${PURPLE}Creating build folder...${NC}"
 
