@@ -13,7 +13,7 @@ This script will build and compile Yuzu for macOS on Apple Silicon.
 
 Get it from here!
 
-[![Download](https://img.shields.io/badge/Download-v0.0.3-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.3/build_yuzu.sh)
+[![Download](https://img.shields.io/badge/Download-v0.0.4-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.4/build_yuzu.sh)
 
 ## Usage:
 
