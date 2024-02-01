@@ -18,7 +18,7 @@ https://yuzu-emu.org/wiki/building-for-macos/
 
 https://github.com/yuzu-emu/yuzu
 
-[![Pobierz](https://img.shields.io/badge/Download-v0.0.3-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.3/build_yuzu.sh)
+[![Pobierz](https://img.shields.io/badge/Download-v0.0.4-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.4/build_yuzu.sh)
 
 ## Użytkowanie:
 
