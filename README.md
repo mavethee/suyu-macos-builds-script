@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/yuzu-emu/yuzu-assets/master/icons/icon.png" width="10%" height="10%" align="right"/> 
+<img src="yuzu_icon.png" width="20%" height="20%" align="right"/> 
 
 ## Build script for compiling Yuzu on Apple Silicon
 
