@@ -1,6 +1,6 @@
-<img src="./assets/icons/yuzu_icon.png" width="20%" height="20%" align="right"/> 
-
 ## Skrypt kompilujący port Yuzu na systemy macOS
+
+<img src="./assets/icons/yuzu_icon.png" width="20%" height="20%" align="right"/> 
 
 [🇵🇱 Czytasz polską wersje strony](README_pl_PL.md) [🇺🇸 Go to English version](README.md)
 
@@ -8,17 +8,7 @@ Ten skrypt pobierze wszystkie potrzebne rzeczy dla portu Yuzu na macOS.
 
 Weź pod uwagę, żeby nie nastawiać się na wiele, w obecnym stanie nie jest to w pełni funkcjonalny port. 
 
-Prace na portem na macOS wciąż trwają!
-
-Skrypt bazuje na tym artykule:
-
-https://yuzu-emu.org/wiki/building-for-macos/
-
-## Oficjalne repozytorium Yuzu na GitHubie:
-
-https://github.com/yuzu-emu/yuzu
-
-[![Pobierz](https://img.shields.io/badge/Download-v0.0.5-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.5/build_yuzu.sh)
+[![Pobierz](https://img.shields.io/badge/Download-v0.0.6-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.6/build_yuzu.sh)
 
 ## Użytkowanie:
 
@@ -46,40 +36,40 @@ Preferowane odpalenie skryptu w katalogu domowym.
 
 [Kompatybiliność](./assets/compatibility/compatibility_pl_PL.md)
 
-## Kompilacja:
+## Contribution:
 
-## 1. Sklonuj repozytorium:
+### 1. Sklonuj repozytorium:
 
 ```sh
 git clone https://github.com/mavethee/yuzu-macos-builds-script.git
 cd yuzu-macos-builds-script
 ```
 
-## 2. Upewnij się że repozytorium jest aktualne:
+### 2. Upewnij się że repozytorium jest aktualne:
 
 ```sh
 git pull origin main
 ```
 
-## 3. Skopiuj skrypt do swojego katalogu głównego:
+### 3. Skopiuj skrypt do swojego katalogu głównego:
 
 ```sh
 ditto build_yuzu.sh $HOME/build_yuzu.sh
 ```
 
-## 4. Nadaj uprawnienia skryptowi:
+### 4. Nadaj uprawnienia skryptowi:
 
 ```sh
 chmod +x $HOME/build_yuzu.sh
 ```
 
-## 5. Uruchom skrypt:
+### 5. Uruchom skrypt:
 
 ```sh
 $HOME/build_yuzu.sh
 ```
 
-## 6. Enjoy!
+### 6. Enjoy!
 
 Notka: Pamiętaj o powtórzeniu kroku drugiego co jakiś czas, aby mieć najaktualniejszy skrypt. </br>
 
