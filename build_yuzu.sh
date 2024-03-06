@@ -112,7 +112,7 @@ if [ $? -eq 0 ]; then
     echo -e "${PURPLE}Installation completed.${NC}"
 
     # Remove build folder
-    cd "$HOME/yuzu"
+    cd "$HOME/suyu"
     rm -rf build
 else
     echo -e "Build ${RED}failed${NC}. Please check the build output for errors."
