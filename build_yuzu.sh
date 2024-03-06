@@ -107,7 +107,7 @@ if [ $? -eq 0 ]; then
     echo -e "${PURPLE}Moving yuzu.app to /Applications...${NC}"
 
     # Move yuzu.app to /Applications
-    mv bin/yuzu.app /Applications/
+    mv bin/yuzu.app /Applications/Yuzu.app
 
     echo -e "${PURPLE}Installation completed.${NC}"
 
