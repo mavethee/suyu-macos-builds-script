@@ -1,4 +1,4 @@
-<img src="yuzu_icon.png" width="20%" height="20%" align="right"/> 
+<img src="./assets/icons/yuzu_icon.png" width="20%" height="20%" align="right"/> 
 
 ## Skrypt kompilujący port Yuzu na systemy macOS
 
@@ -18,7 +18,7 @@ https://yuzu-emu.org/wiki/building-for-macos/
 
 https://github.com/yuzu-emu/yuzu
 
-[![Pobierz](https://img.shields.io/badge/Download-v0.0.4-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.4/build_yuzu.sh)
+[![Pobierz](https://img.shields.io/badge/Download-v0.0.5-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.5/build_yuzu.sh)
 
 ## Użytkowanie:
 
@@ -44,38 +44,38 @@ Preferowane odpalenie skryptu w katalogu domowym.
 
 ## Sprawdź obecną kompatybilność:
 
-[Kompatybiliność](Compatibility_pl_PL.md)
+[Kompatybiliność](./assets/compatibility/compatibility_pl_PL.md)
 
 ## Kompilacja:
 
 ## 1. Sklonuj repozytorium:
 
-```
+```sh
 git clone https://github.com/mavethee/yuzu-macos-builds-script.git
 cd yuzu-macos-builds-script
 ```
 
 ## 2. Upewnij się że repozytorium jest aktualne:
 
-```
+```sh
 git pull origin main
 ```
 
 ## 3. Skopiuj skrypt do swojego katalogu głównego:
 
-```
+```sh
 ditto build_yuzu.sh $HOME/build_yuzu.sh
 ```
 
 ## 4. Nadaj uprawnienia skryptowi:
 
-```
+```sh
 chmod +x $HOME/build_yuzu.sh
 ```
 
 ## 5. Uruchom skrypt:
 
-```
+```sh
 $HOME/build_yuzu.sh
 ```
 
@@ -85,13 +85,11 @@ Notka: Pamiętaj o powtórzeniu kroku drugiego co jakiś czas, aby mieć najaktu
 
 ## Podziękowania:
 
--   Niezawodnego teamu Yuzu, [zrzutka im na piwerko mile widziana 🍺](https://www.patreon.com/yuzuteam)
+-   Yuzu's macOS build instructions archived [here](https://web.archive.org/web/20240113191459/https://yuzu-emu.org/wiki/building-for-macos/)
+
+    ...oraz ChatGPT wraz GitHub Copilot za pomoc w upublicznieniu tego syfu.
 
 -   [@shinra-electric](https://github.com/shinra-electric) za wszelkie poprawki do mojego pijackiego kodu! 🍻
-
-- Instrukcje kompilacji projektu na macOS:
-
-    https://yuzu-emu.org/wiki/building-for-macos/
 
     Jeśli zostanę pozwany przez Big N, zapraszam na mój grób ^^
 
