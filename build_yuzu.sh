@@ -86,28 +86,28 @@ cmake .. -GNinja -DCMAKE_BUILD_TYPE=RELEASE \
      	-DENABLE_QT6=ON \
       	-DYUZU_USE_EXTERNAL_VULKAN_HEADERS=OFF
 
-echo -e "${PURPLE}Building Yuzu...${NC}"
+echo -e "${PURPLE}Building Suyu...${NC}"
 
-# Build Yuzu using Ninja
+# Build Suyu using Ninja
 ninja
 
 # Check if the build was successful
 if [ $? -eq 0 ]; then
-    echo -e "Build ${GREEN}successful${NC}."
+    echo -e "${GREEN}Build successful${NC}."
 
-    # Remove existing yuzu.app if it exists in /Applications
-    if [ -d "/Applications/yuzu.app" ]; then
-        echo -e "${PURPLE}Removing existing yuzu.app in /Applications...${NC}"
-        rm -rf "/Applications/yuzu.app"
+    # Remove existing suyu.app if it exists in /Applications
+    if [ -d "/Applications/suyu.app" ]; then
+        echo -e "${PURPLE}Removing existing suyu.app in /Applications...${NC}"
+        rm -rf "/Applications/suyu.app"
     fi
 
     # Bundle dependencies and codesign
     dylibbundler -of -cd -b -x bin/yuzu.app/Contents/MacOS/yuzu -d bin/yuzu.app/Contents/libs/
     
-    echo -e "${PURPLE}Moving yuzu.app to /Applications...${NC}"
+    echo -e "${PURPLE}Moving Suyu.app to /Applications...${NC}"
 
-    # Move yuzu.app to /Applications
-    mv bin/yuzu.app /Applications/Yuzu.app
+    # Move suyu.app to /Applications
+    mv bin/yuzu.app /Applications/suyu.app
 
     echo -e "${PURPLE}Installation completed.${NC}"
 
@@ -115,5 +115,5 @@ if [ $? -eq 0 ]; then
     cd "$HOME/suyu"
     rm -rf build
 else
-    echo -e "Build ${RED}failed${NC}. Please check the build output for errors."
+    echo -e "${RED}Build failed${NC}. Please check the build output for errors."
 fi
