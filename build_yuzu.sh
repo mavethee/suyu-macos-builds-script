@@ -12,8 +12,6 @@ echo -e "${PURPLE}Checking for Homebrew installation...${NC}"
 if ! command -v brew &> /dev/null; then
     echo -e "${PURPLE}Homebrew not found. Installing Homebrew...${NC}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
 else
     echo -e "${PURPLE}Homebrew found. Updating Homebrew...${NC}"
     brew update && brew upgrade
@@ -36,21 +34,21 @@ brew_install() {
 	fi
 }
 
-deps=( autoconf automake boost ccache cmake dylibbundler ffmpeg fmt glslang hidapi libtool libusb llvm@17 lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
+deps=( autoconf automake boost ccache cmake ffmpeg fmt glslang hidapi libtool libusb llvm@17 lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
 
 for dep in $deps[@]
 do 
 	brew_install $dep
 done
 
-# Clone the Suyu repository if not already cloned
-if [ ! -d "suyu" ]; then
-    echo -e "${PURPLE}Cloning Suyu repository...${NC}"
-    git clone --recursive https://gitlab.com/suyu-emu/suyu.git/
-    cd suyu
+# Clone the Yuzu repository if not already cloned
+if [ ! -d "yuzu" ]; then
+    echo -e "${PURPLE}Cloning Yuzu repository...${NC}"
+    git clone --recursive https://github.com/yuzu-emu/yuzu
+    cd yuzu
 else
-    echo -e "${PURPLE}Suyu repository already exists. Updating...${NC}"
-    cd suyu
+    echo -e "${PURPLE}Yuzu repository already exists. Updating...${NC}"
+    cd yuzu
 
     echo -e "${PURPLE}Fetching latest changes...${NC}"
     
@@ -77,43 +75,33 @@ mkdir -p build && cd build
 echo -e "${PURPLE}Running CMake...${NC}"
 
 # Run CMake with specified options
-cmake .. -GNinja -DCMAKE_BUILD_TYPE=RELEASE \
-	-DYUZU_USE_BUNDLED_VCPKG=OFF \
- 	-DYUZU_TESTS=OFF \
-  	-DENABLE_WEB_SERVICE=OFF \
-   	-DENABLE_LIBUSB=OFF \
-    	-DSDL_ARMNEON=ON \
-     	-DENABLE_QT6=ON \
-      	-DYUZU_USE_EXTERNAL_VULKAN_HEADERS=OFF
+cmake .. -GNinja -DCMAKE_BUILD_TYPE=RELEASE -DYUZU_USE_BUNDLED_VCPKG=OFF -DYUZU_TESTS=OFF -DENABLE_WEB_SERVICE=OFF -DENABLE_LIBUSB=OFF -DSDL_ARMNEON=ON -DENABLE_QT6=ON -DYUZU_USE_EXTERNAL_VULKAN_HEADERS=OFF
 
-echo -e "${PURPLE}Building Yuzu...${NC}"
+echo -e "${PURPLE}Building Suyu...${NC}"
 
-# Build Yuzu using Ninja
+# Build Suyu using Ninja
 ninja
 
 # Check if the build was successful
 if [ $? -eq 0 ]; then
-    echo -e "Build ${GREEN}successful${NC}."
+    echo -e "${GREEN}Build successful${NC}."
 
-    # Remove existing yuzu.app if it exists in /Applications
-    if [ -d "/Applications/yuzu.app" ]; then
-        echo -e "${PURPLE}Removing existing yuzu.app in /Applications...${NC}"
-        rm -rf "/Applications/yuzu.app"
+    # Remove existing suyu.app if it exists in /Applications
+    if [ -d "/Applications/suyu.app" ]; then
+        echo -e "${PURPLE}Removing existing suyu.app in /Applications...${NC}"
+        rm -rf "/Applications/suyu.app"
     fi
-
-    # Bundle dependencies and codesign
-    dylibbundler -of -cd -b -x bin/yuzu.app/Contents/MacOS/yuzu -d bin/yuzu.app/Contents/libs/
     
-    echo -e "${PURPLE}Moving yuzu.app to /Applications...${NC}"
+    echo -e "${PURPLE}Moving Suyu.app to /Applications...${NC}"
 
-    # Move yuzu.app to /Applications
-    mv bin/yuzu.app /Applications/Yuzu.app
+    # Move suyu.app to /Applications
+    mv bin/yuzu.app /Applications/suyu.app
 
     echo -e "${PURPLE}Installation completed.${NC}"
 
     # Remove build folder
-    cd "$HOME/suyu"
+    cd "$HOME/yuzu"
     rm -rf build
 else
-    echo -e "Build ${RED}failed${NC}. Please check the build output for errors."
+    echo -e "${RED}Build failed${NC}. Please check the build output for errors."
 fi
