@@ -43,14 +43,14 @@ do
 	brew_install $dep
 done
 
-# Clone the Yuzu repository if not already cloned
-if [ ! -d "yuzu" ]; then
-    echo -e "${PURPLE}Cloning Yuzu repository...${NC}"
-    git clone --recursive https://github.com/yuzu-emu/yuzu
-    cd yuzu
+# Clone the Suyu repository if not already cloned
+if [ ! -d "suyu" ]; then
+    echo -e "${PURPLE}Cloning Suyu repository...${NC}"
+    git clone --recursive https://gitlab.com/suyu-emu/suyu.git/
+    cd suyu
 else
-    echo -e "${PURPLE}Yuzu repository already exists. Updating...${NC}"
-    cd yuzu
+    echo -e "${PURPLE}Suyu repository already exists. Updating...${NC}"
+    cd suyu
 
     echo -e "${PURPLE}Fetching latest changes...${NC}"
     
