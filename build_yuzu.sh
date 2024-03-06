@@ -36,7 +36,7 @@ brew_install() {
 	fi
 }
 
-deps=( autoconf automake boost ccache cmake ffmpeg fmt glslang hidapi libtool libusb llvm@17 lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
+deps=( autoconf automake boost ccache cmake dylibbundler ffmpeg fmt glslang hidapi libtool libusb llvm@17 lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
 
 for dep in $deps[@]
 do 
@@ -93,6 +93,9 @@ if [ $? -eq 0 ]; then
         echo -e "${PURPLE}Removing existing yuzu.app in /Applications...${NC}"
         rm -rf "/Applications/yuzu.app"
     fi
+
+    # Bundle dependencies and codesign
+    dylibbundler -of -cd -b -x bin/yuzu.app/Contents/MacOS/yuzu -d bin/yuzu.app/Contents/libs/
     
     echo -e "${PURPLE}Moving yuzu.app to /Applications...${NC}"
 
