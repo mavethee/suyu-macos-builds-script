@@ -12,6 +12,8 @@ echo -e "${PURPLE}Checking for Homebrew installation...${NC}"
 if ! command -v brew &> /dev/null; then
     echo -e "${PURPLE}Homebrew not found. Installing Homebrew...${NC}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 else
     echo -e "${PURPLE}Homebrew found. Updating Homebrew...${NC}"
     brew update && brew upgrade
