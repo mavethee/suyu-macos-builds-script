@@ -1,6 +1,6 @@
-<img src="./assets/icons/yuzu_icon.png" width="20%" height="20%" align="right"/> 
-
 ## Build script for compiling Yuzu on Apple Silicon
+
+<img src="./assets/icons/yuzu_icon.png" width="20%" height="20%" align="right"/> 
 
 [🇵🇱 Szukasz Polskiego? Kliknij tutaj](README_pl_PL.md) [🇺🇸 You are reading English version](README.md)
 
