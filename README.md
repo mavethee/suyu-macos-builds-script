@@ -1,6 +1,6 @@
-<img src="./assets/icons/yuzu_icon.png" width="20%" height="20%" align="right"/> 
-
 ## Build script for compiling Yuzu on Apple Silicon
+
+<img src="./assets/icons/yuzu_icon.png" width="20%" height="20%" align="right"/> 
 
 [🇵🇱 Szukasz Polskiego? Kliknij tutaj](README_pl_PL.md) [🇺🇸 You are reading English version](README.md)
 
@@ -42,40 +42,40 @@ It is advised to run it from your home directory.
 
 [Compatiblity List](./assets/compatibility/compatibility.md)
 
-## Building:
+## Contribution:
 
-## 1. Clone the repository to your home directory:
+### 1. Clone the repository to your home directory:
 
 ```sh
 git clone https://github.com/mavethee/yuzu-macos-builds-script.git
 cd yuzu-macos-builds-script
 ```
 
-## 2. Make sure cloned repo is up to date:
+### 2. Make sure cloned repo is up to date:
 
 ```sh
 git pull origin main
 ```
 
-## 3. Copy the script to a location on your home directory:
+### 3. Copy the script to a location on your home directory:
 
 ```sh
 ditto build_yuzu.sh $HOME/build_yuzu.sh
 ```
 
-## 4. Make the script executable:
+### 4. Make the script executable:
 
 ```sh
 chmod +x $HOME/build_yuzu.sh
 ```
 
-## 5. Run the build script:
+### 5. Run the build script:
 
 ```sh
 $HOME/build_yuzu.sh
 ```
 
-## 6. Enjoy!
+### 6. Enjoy!
 
 Note: Remember to repeat STEP 2 for future script changes. </br>
 
