@@ -36,7 +36,7 @@ brew_install() {
 	fi
 }
 
-deps=( autoconf automake boost ccache cmake dylibbundler ffmpeg fmt glslang hidapi libtool libusb llvm@17 lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
+deps=( autoconf automake boost ccache cmake catch2 dylibbundler ffmpeg fmt glslang hidapi libtool libusb llvm@17 lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
 
 for dep in $deps[@]
 do 
@@ -81,7 +81,7 @@ cmake .. -GNinja \
     -DCMAKE_BUILD_TYPE=RELEASE \
     -DSUYU_USE_BUNDLED_VCPKG=OFF \
     -DSUYU_TESTS=OFF \
-  	-DENABLE_WEB_SERVICE=OFF \
+    -DENABLE_WEB_SERVICE=OFF \
     -DENABLE_LIBUSB=OFF \
     -DSDL_ARMNEON=ON \
     -DENABLE_QT6=ON \
@@ -94,7 +94,7 @@ ninja
 
 # Check if the build was successful
 if [ $? -eq 0 ]; then
-    echo -e "${GREEN}Build successful${NC}."
+    echo -e "${GREEN}Build successful.${NC}"
 
     # Remove existing Suyu.app if it exists in /Applications
     if [ -d "/Applications/Suyu.app" ]; then
@@ -116,5 +116,5 @@ if [ $? -eq 0 ]; then
     cd "$HOME/suyu"
     sudo rm -rf build
 else
-    echo -e "${RED}Build failed${NC}. Please check the build output for errors."
+    echo -e "${RED}Build failed.${NC} Please check the build output for errors."
 fi
