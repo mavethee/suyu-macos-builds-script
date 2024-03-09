@@ -54,7 +54,7 @@ else
 
     echo -e "${PURPLE}Fetching latest changes...${NC}"
     
-    git fetch origin master
+    git fetch origin dev
 
     echo -e "${PURPLE}Removing existing submodules...${NC}"
     git submodule deinit -f .
@@ -77,37 +77,38 @@ mkdir -p build && cd build
 echo -e "${PURPLE}Running CMake...${NC}"
 
 # Run CMake with specified options
-cmake .. -GNinja -DCMAKE_BUILD_TYPE=RELEASE \
-	-DYUZU_USE_BUNDLED_VCPKG=OFF \
- 	-DYUZU_TESTS=OFF \
-  	-DENABLE_WEB_SERVICE=OFF \
-   	-DENABLE_LIBUSB=OFF \
-    	-DSDL_ARMNEON=ON \
-     	-DENABLE_QT6=ON \
-      	-DYUZU_USE_EXTERNAL_VULKAN_HEADERS=OFF
+cmake .. -GNinja \
+    -DCMAKE_BUILD_TYPE=RELEASE \
+    -DSUYU_USE_BUNDLED_VCPKG=OFF \
+    -DSUYU_TESTS=OFF \
+    -DENABLE_WEB_SERVICE=OFF \
+    -DENABLE_LIBUSB=OFF \
+    -DSDL_ARMNEON=ON \
+    -DENABLE_QT6=ON \
+    -DSUYU_USE_EXTERNAL_VULKAN_HEADERS=OFF
 
-echo -e "${PURPLE}Building yuzu...${NC}"
+echo -e "${PURPLE}Building suyu...${NC}"
 
 # Build Suyu using Ninja
 ninja
 
 # Check if the build was successful
 if [ $? -eq 0 ]; then
-    echo -e "${GREEN}Build successful${NC}."
+    echo -e "${GREEN}Build successful.${NC}"
 
     # Remove existing Suyu.app if it exists in /Applications
-    if [ -d "/Applications/yuzu.app" ]; then
+    if [ -d "/Applications/Suyu.app" ]; then
         echo -e "${PURPLE}Removing existing Suyu.app in /Applications...${NC}"
-        rm -rf "/Applications/yuzu.app"
+        rm -rf "/Applications/Suyu.app"
     fi
 
     # Bundle dependencies and codesign
-    dylibbundler -of -cd -b -x bin/yuzu.app/Contents/MacOS/yuzu -d bin/yuzu.app/Contents/libs/
+    dylibbundler -of -cd -b -x bin/suyu.app/Contents/MacOS/suyu -d bin/suyu.app/Contents/libs/
     
-    echo -e "${PURPLE}Moving yuzu.app to /Applications...${NC}"
+    echo -e "${PURPLE}Moving Suyu.app to /Applications...${NC}"
 
     # Move Suyu.app to /Applications
-    mv bin/yuzu.app /Applications/yuzu.app
+    mv bin/suyu.app /Applications/Suyu.app
 
     echo -e "${PURPLE}Installation completed.${NC}"
 
@@ -115,5 +116,5 @@ if [ $? -eq 0 ]; then
     cd "$HOME/suyu"
     sudo rm -rf build
 else
-    echo -e "${RED}Build failed${NC}. Please check the build output for errors."
+    echo -e "${RED}Build failed.${NC} Please check the build output for errors."
 fi
