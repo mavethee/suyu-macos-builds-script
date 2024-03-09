@@ -36,7 +36,7 @@ brew_install() {
 	fi
 }
 
-deps=( autoconf automake boost ccache cmake catch2 dylibbundler ffmpeg fmt glslang hidapi libtool libusb llvm@17 lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
+deps=( autoconf automake boost ccache cmake dylibbundler ffmpeg fmt glslang hidapi libtool libusb llvm@17 lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
 
 for dep in $deps[@]
 do 
@@ -54,7 +54,7 @@ else
 
     echo -e "${PURPLE}Fetching latest changes...${NC}"
     
-    git fetch origin master
+    git fetch origin dev
 
     echo -e "${PURPLE}Removing existing submodules...${NC}"
     git submodule deinit -f .
