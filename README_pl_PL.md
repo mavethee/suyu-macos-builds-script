@@ -1,10 +1,10 @@
-## Skrypt kompilujący port Yuzu na systemy macOS
+## Skrypt kompilujący port Suyu na systemy macOS
 
-<img src="./assets/icons/yuzu_icon.png" width="20%" height="20%" align="right"/> 
+<img src="./assets/icons/suyu.png" width="20%" height="20%" align="right"/> 
 
 [🇵🇱 Czytasz polską wersje strony](README_pl_PL.md) [🇺🇸 Go to English version](README.md)
 
-Ten skrypt pobierze wszystkie potrzebne rzeczy dla portu Yuzu na macOS.
+Ten skrypt pobierze wszystkie potrzebne rzeczy dla portu Suyu na macOS.
 
 Weź pod uwagę, żeby nie nastawiać się na wiele, w obecnym stanie nie jest to w pełni funkcjonalny port. 
 
@@ -20,15 +20,15 @@ Preferowane odpalenie skryptu w katalogu domowym.
 > W przypadku podstawowej konfiguracji na M1, kompilacja trwa ~4mins (pomiar zawiera również pobieranie potrzebnych plików do kompilacji, zależne od szybkości połączenia)
 > W razie problemów z uprawnieniami:
 > ```
-> chmod +x ./build_yuzu.sh
+> chmod +x ./build_suyu.sh
 > ```
 
 > [!NOTE]
-> Obecnie yuzu nie wspiera wielu wymaganych funkcji jak na przykład Geometry Shaders lub Transform Feedback Buffers.
-> Jeśli twoja gra używa niewspieranych funkcji, yuzu się scrashuje.
-> Jeśli chcesz poznać szczegóły na temat crasha danej gry, odpal Yuzu za pomocą Terminala:
+> Obecnie Suyu nie wspiera wielu wymaganych funkcji jak na przykład Geometry Shaders lub Transform Feedback Buffers.
+> Jeśli twoja gra używa niewspieranych funkcji, Suyu się scrashuje.
+> Jeśli chcesz poznać szczegóły na temat crasha danej gry, odpal Suyu za pomocą Terminala:
 > ```
-> /Applications/yuzu.app/Contents/MacOS/yuzu
+> /Applications/Suyu.app/Contents/MacOS/Suyu
 > ```
 > Sytuacja może ulec zmianie w przyszłości, gdy tylko MoltenVK doda wspracie dla większej ilości funkcji.
 
@@ -54,19 +54,19 @@ git pull origin main
 ### 3. Skopiuj skrypt do swojego katalogu głównego:
 
 ```sh
-ditto build_yuzu.sh $HOME/build_yuzu.sh
+ditto build_suyu.sh $HOME/build_suyu.sh
 ```
 
 ### 4. Nadaj uprawnienia skryptowi:
 
 ```sh
-chmod +x $HOME/build_yuzu.sh
+chmod +x $HOME/build_suyu.sh
 ```
 
 ### 5. Uruchom skrypt:
 
 ```sh
-$HOME/build_yuzu.sh
+$HOME/build_suyu.sh
 ```
 
 ### 6. Enjoy!
@@ -75,7 +75,7 @@ Notka: Pamiętaj o powtórzeniu kroku drugiego co jakiś czas, aby mieć najaktu
 
 ## Podziękowania:
 
--   Yuzu's macOS build instructions archived [here](https://web.archive.org/web/20240113191459/https://yuzu-emu.org/wiki/building-for-macos/)
+-   Suyu's macOS build instructions archived [here](https://web.archive.org/web/20240113191459/https://yuzu-emu.org/wiki/building-for-macos/)
 
     ...oraz ChatGPT wraz GitHub Copilot za pomoc w upublicznieniu tego syfu.
 
