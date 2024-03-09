@@ -10,13 +10,12 @@ echo -e "${PURPLE}Checking for Homebrew installation...${NC}"
 
 # Check if Homebrew is installed
 if ! command -v brew &> /dev/null; then
-    echo -e "${PURPLE}Homebrew not found. Installing Homebrew...${NC}"
+    echo -e "${RED}Homebrew not found.${PURPLE}Installing Homebrew...${NC}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
 else
-    echo -e "${PURPLE}Homebrew found. Updating Homebrew...${NC}"
-    brew update && brew upgrade
+    echo -e "${GREEN}Homebrew found.${NC}"
 fi
 
 echo -e "${PURPLE}Heading to home directory...${NC}"
@@ -29,18 +28,43 @@ cd "$HOME"
 echo -e "${PURPLE}Checking for Homebrew dependencies...${NC}"
 brew_install() {
 	if [ -d "$(brew --prefix)/opt/$1" ]; then
-		echo -e "${GREEN}found $1...${NC}"
+		echo -e "${GREEN}Found $1...${NC}"
 	else
- 		echo -e "${PURPLE}Did not find $1. Installing...${NC}"
+ 		echo -e "${RED}Package $1 not found. ${PURPLE}Installing...${NC}"
 		brew install $1
 	fi
 }
 
-deps=( autoconf automake boost ccache cmake dylibbundler ffmpeg fmt glslang hidapi libtool libusb llvm@17 lz4 ninja nlohmann-json openssl pkg-config qt@6 sdl2 speexdsp vulkan-loader zlib zstd )
+dependencies=(
+autoconf 
+automake 
+boost 
+ccache 
+cmake 
+dylibbundler 
+ffmpeg 
+fmt 
+glslang 
+hidapi 
+libtool 
+libusb 
+llvm@17 
+lz4 
+ninja 
+nlohmann-json 
+openssl 
+pkg-config 
+qt@6 
+sdl2 
+speexdsp 
+vulkan-loader 
+zlib 
+zstd
+)
 
-for dep in $deps[@]
+for dependency in $dependencies[@]
 do 
-	brew_install $dep
+	brew_install $dependency
 done
 
 # Clone the Suyu repository if not already cloned
@@ -53,8 +77,7 @@ else
     cd suyu
 
     echo -e "${PURPLE}Fetching latest changes...${NC}"
-    
-    git fetch origin master
+    git fetch origin dev
 
     echo -e "${PURPLE}Removing existing submodules...${NC}"
     git submodule deinit -f .
@@ -63,57 +86,58 @@ else
     git submodule update --init --recursive
 fi
 
-echo -e "${PURPLE}Exporting necessary environment variables...${NC}"
-
 # Export necessary environment variables
+echo -e "${PURPLE}Exporting necessary environment variables...${NC}"
 export LLVM_DIR=$(brew --prefix)/opt/llvm@17
 export FFMPEG_DIR=$(brew --prefix)/opt/ffmpeg
 
-echo -e "${PURPLE}Creating build folder...${NC}"
-
 # Create build folder
+echo -e "${PURPLE}Creating build folder...${NC}"
 mkdir -p build && cd build
 
+# Run CMake with specified options:
 echo -e "${PURPLE}Running CMake...${NC}"
+cmake .. -GNinja \
+    -DCMAKE_BUILD_TYPE=RELEASE \
+    -DSUYU_USE_BUNDLED_VCPKG=OFF \
+    -DSUYU_TESTS=OFF \
+    -DENABLE_WEB_SERVICE=OFF \
+    -DENABLE_LIBUSB=OFF \
+    -DSDL_ARMNEON=ON \
+    -DENABLE_QT6=ON \
+    -DSUYU_USE_EXTERNAL_VULKAN_HEADERS=OFF
 
-# Run CMake with specified options
-cmake .. -GNinja -DCMAKE_BUILD_TYPE=RELEASE \
-	-DYUZU_USE_BUNDLED_VCPKG=OFF \
- 	-DYUZU_TESTS=OFF \
-  	-DENABLE_WEB_SERVICE=OFF \
-   	-DENABLE_LIBUSB=OFF \
-    	-DSDL_ARMNEON=ON \
-     	-DENABLE_QT6=ON \
-      	-DYUZU_USE_EXTERNAL_VULKAN_HEADERS=OFF
-
-echo -e "${PURPLE}Building yuzu...${NC}"
+echo -e "${PURPLE}Building suyu...${NC}"
 
 # Build Suyu using Ninja
+echo -e "${PURPLE}Building suyu using Ninja...${NC}"
 ninja
 
 # Check if the build was successful
 if [ $? -eq 0 ]; then
-    echo -e "${GREEN}Build successful${NC}."
+    echo -e "${GREEN}Build successful.${NC}"
 
     # Remove existing Suyu.app if it exists in /Applications
-    if [ -d "/Applications/yuzu.app" ]; then
+    if [ -d "/Applications/suyu.app" ]; then
         echo -e "${PURPLE}Removing existing Suyu.app in /Applications...${NC}"
-        rm -rf "/Applications/yuzu.app"
+        rm -rf "/Applications/suyu.app"
     fi
 
     # Bundle dependencies and codesign
-    dylibbundler -of -cd -b -x bin/yuzu.app/Contents/MacOS/yuzu -d bin/yuzu.app/Contents/libs/
+    echo -e "${PURPLE}Bundling and codesigning dependencies...${NC}"
+    dylibbundler -of -cd -b -x bin/suyu.app/Contents/MacOS/suyu -d bin/suyu.app/Contents/libs/
     
-    echo -e "${PURPLE}Moving yuzu.app to /Applications...${NC}"
-
     # Move Suyu.app to /Applications
-    mv bin/yuzu.app /Applications/yuzu.app
-
-    echo -e "${PURPLE}Installation completed.${NC}"
+    echo -e "${PURPLE}Moving suyu.app to /Applications...${NC}"
+    mv bin/suyu.app /Applications/suyu.app
 
     # Remove build folder
+    echo -e "${PURPLE}Cleaning up build files...${NC}"
     cd "$HOME/suyu"
-    sudo rm -rf build
+    rm -rf build
+
+    echo -e "${GREEN}Installation completed.${NC}"
+
 else
-    echo -e "${RED}Build failed${NC}. Please check the build output for errors."
+    echo -e "${RED}Build failed.${PURPLE}Please check the build output for errors.${NC}."
 fi

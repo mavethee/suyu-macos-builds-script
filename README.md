@@ -1,10 +1,10 @@
-## Build script for compiling Yuzu on Apple Silicon
+## Build script for compiling Suyu on Apple Silicon
 
-<img src="./assets/icons/yuzu_icon.png" width="20%" height="20%" align="right"/> 
+<img src="./assets/icons/suyu.png" width="20%" height="20%" align="right"/> 
 
-[🇵🇱 Szukasz Polskiego? Kliknij tutaj](README_pl_PL.md) [🇺🇸 You are reading English version](README.md)
+🇵🇱 Szukasz Polskiego? [Kliknij tutaj](README_pl_PL.md)! You are reading English version! 🇺🇸
 
-This script will build and compile Yuzu for macOS on Apple Silicon.
+This script will build and compile Suyu for macOS on Apple Silicon.
 
 > [!WARNING]
 > This script is provided for experimentation purposes.<br> 
@@ -13,7 +13,7 @@ This script will build and compile Yuzu for macOS on Apple Silicon.
 
 Get it from here!
 
-[![Download](https://img.shields.io/badge/Download-v0.0.6-brightgreen)](https://github.com/mavethee/yuzu-macos-builds-script/releases/download/0.0.6/build_yuzu.sh)
+[![Download](https://img.shields.io/badge/Download-v0.0.7-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.7/build_suyu.sh)
 
 ## Usage:
 
@@ -25,17 +25,22 @@ It is advised to run it from your home directory.
 > On a base M1, building takes ~4mins (measured including gathering needed dependencies which differs depending on your internet speed)
 > In case of any permission issues, run:
 > ```
-> chmod +x ./build_yuzu.sh
+> chmod +x ./build_suyu.sh
 > ```
-
-> [!NOTE]
-> Yuzu currently does not support a lot of required features.<br>
+>
+> Suyu currently does not support a lot of required features.<br>
 > If a game you are trying to play uses these features, it will crash. <br>
-> If you want to know what missing feature is causing the crash, run yuzu through Terminal:
+> If you want to know what missing feature is causing the crash, run Suyu through Terminal:
 >
 > ```
-> /Applications/yuzu.app/Contents/MacOS/yuzu
+> /Applications/suyu.app/Contents/MacOS/suyu
 > ```
+>
+> If you want track everything to log file:
+> ```
+> /Applications/suyu.app/Contents/MacOS/suyu >> suyu.log
+> ```
+>
 > The situation will get better in the future as MoltenVK adds support for more features.
 
 ## Check current compatibility:
@@ -47,8 +52,8 @@ It is advised to run it from your home directory.
 ### 1. Clone the repository to your home directory:
 
 ```sh
-git clone https://github.com/mavethee/yuzu-macos-builds-script.git
-cd yuzu-macos-builds-script
+git clone https://github.com/mavethee/suyu-macos-builds-script.git
+cd suyu-macos-builds-script
 ```
 
 ### 2. Make sure cloned repo is up to date:
@@ -60,19 +65,19 @@ git pull origin main
 ### 3. Copy the script to a location on your home directory:
 
 ```sh
-ditto build_yuzu.sh $HOME/build_yuzu.sh
+ditto build_suyu.sh $HOME/build_suyu.sh
 ```
 
 ### 4. Make the script executable:
 
 ```sh
-chmod +x $HOME/build_yuzu.sh
+chmod +x $HOME/build_suyu.sh
 ```
 
 ### 5. Run the build script:
 
 ```sh
-$HOME/build_yuzu.sh
+$HOME/build_suyu.sh
 ```
 
 ### 6. Enjoy!
@@ -81,7 +86,7 @@ Note: Remember to repeat STEP 2 for future script changes. </br>
 
 ## Special thanks to:
 
-- Yuzu's macOS build instructions archived [here](https://web.archive.org/web/20240113191459/https://yuzu-emu.org/wiki/building-for-macos/)
+- Suyu's macOS build instructions archived [here](https://web.archive.org/web/20240113191459/https://yuzu-emu.org/wiki/building-for-macos/)
 
     ...and ChatGPT with GitHub Copilot for making my drunkass shell coding public.
 
