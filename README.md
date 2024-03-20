@@ -13,7 +13,7 @@ This script will build and compile Suyu for macOS on Apple Silicon.
 
 Get it from here!
 
-[![Download](https://img.shields.io/badge/Download-v0.0.7-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.7/build_suyu.sh)
+[![Download](https://img.shields.io/badge/Download-v0.0.8-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.8/build_suyu.sh)
 
 ## Usage:
 
@@ -82,8 +82,9 @@ $HOME/build_suyu.sh
 
 ### 6. Enjoy!
 
-Note: Remember to repeat STEP 2 for future script changes. </br>
-
+```sh
+Note: Remember to repeat STEP 2 for future script changes.
+```
 ## Special thanks to:
 
 - Suyu's macOS build instructions archived [here](https://web.archive.org/web/20240113191459/https://yuzu-emu.org/wiki/building-for-macos/)

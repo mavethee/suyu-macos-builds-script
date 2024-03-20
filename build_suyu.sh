@@ -105,6 +105,7 @@ cmake .. -GNinja \
     -DENABLE_LIBUSB=OFF \
     -DSDL_ARMNEON=ON \
     -DENABLE_QT6=ON \
+    -DENABLE_QT_TRANSLATION=ON \
     -DSUYU_USE_EXTERNAL_VULKAN_HEADERS=OFF
 
 echo -e "${PURPLE}Building suyu...${NC}"
@@ -133,8 +134,10 @@ if [ $? -eq 0 ]; then
 
     # Remove build folder
     echo -e "${PURPLE}Cleaning up build files...${NC}"
+    echo -e "${PURPLE}Optional, don't worry if it fails.${NC}"
+    echo -e "${RED}You may be asked to provide an administrator password...${NC}"
     cd "$HOME/suyu"
-    rm -rf build
+    sudo rm -rf build
 
     echo -e "${GREEN}Installation completed.${NC}"
 

@@ -8,7 +8,7 @@ Ten skrypt pobierze wszystkie potrzebne rzeczy dla portu Suyu na macOS.
 
 Weź pod uwagę, żeby nie nastawiać się na wiele, w obecnym stanie nie jest to w pełni funkcjonalny port. 
 
-[![Pobierz](https://img.shields.io/badge/Download-v0.0.7-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.7/build_suyu.sh)
+[![Pobierz](https://img.shields.io/badge/Download-v0.0.8-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.8/build_suyu.sh)
 
 ## Użytkowanie:
 
@@ -78,7 +78,9 @@ $HOME/build_suyu.sh
 
 ### 6. Enjoy!
 
-Notka: Pamiętaj o powtórzeniu kroku drugiego co jakiś czas, aby mieć najaktualniejszy skrypt. </br>
+```sh
+Notka: Pamiętaj o powtórzeniu kroku drugiego co jakiś czas, aby mieć najaktualniejszy skrypt.
+```
 
 ## Podziękowania:
 
