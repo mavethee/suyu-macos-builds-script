@@ -11,10 +11,14 @@ Jest to lista wybranych przetestowanych gier, które działają poza ekranem tyt
 - Final Fantasy Pixel Remasters
 - GrimGrimoire
 - Hollow Knight
+- Metroid Dread 
+- Ninja Gaiden Sigma
+- Ninja Gaiden Sigma 2
 - Persona 5 Royal
 - Red Dead Redemption
 - Return of the Obra Dinn
 - Salt & Sanctuary
+- Street Fighter 30th Anniversary
 
 ## Znane niedziałające tytuły:
 Jest to lista wybranych przetestowanych gier które nie uruchamiają się wcale lub poza ekran tytułowy. Nie jest to kompletna lista, jest ich na pewno więcej.
@@ -43,3 +47,4 @@ Jest to lista wybranych przetestowanych gier które nie uruchamiają się wcale 
 Gry, które działały, ale nie jestem pewny, czemu przestały działać.
 
 - The Legend of Zelda: Link's Awakening
+- Metroid Prime Remastered
