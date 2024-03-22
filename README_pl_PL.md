@@ -2,11 +2,13 @@
 
 <img src="./assets/icons/suyu.png" width="20%" height="20%" align="right"/> 
 
-🇵🇱 Czytasz polską wersje! Go to the 🇺🇸 English version [here](README.md).
+#### 🇵🇱 Czytasz polską wersje! Go to the 🇺🇸 English version [here](README.md).
 
 Ten skrypt pobierze wszystkie potrzebne rzeczy dla portu Suyu na macOS.
 
-Weź pod uwagę, żeby nie nastawiać się na wiele, w obecnym stanie nie jest to w pełni funkcjonalny port. 
+Weź pod uwagę, żeby nie nastawiać się na wiele, w obecnym stanie nie jest to w pełni funkcjonalny port.
+
+#### Pobierz klikając w przycisk poniżej lub [na stronie z poszczególnymi wersjami skryptu](https://github.com/mavethee/suyu-macos-builds-script/releases) :)
 
 [![Pobierz](https://img.shields.io/badge/Download-v0.0.9-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.9/build_suyu.sh)
 
@@ -16,8 +18,10 @@ Po pobraniu, otwórz podwójnym klinięciem i postępuj zgodnie z poleceniami.
 
 Preferowane odpalenie skryptu w katalogu domowym.
 
+#### Sprawdź obecną kompatybilność dla portu na systemy macOS z poszczególnymi aplikacjami [tutaj](./assets/compatibility/compatibility_pl_PL.md).
+
 > [!NOTE]
-> W przypadku podstawowej konfiguracji na M1, kompilacja trwa ~4mins (pomiar zawiera również pobieranie potrzebnych plików do kompilacji, zależne od szybkości połączenia)
+> W przypadku podstawowej konfiguracji na M1, kompilacja trwa ~6mins (pomiar zawiera również pobieranie potrzebnych plików do kompilacji, zależne od szybkości połączenia)
 > W razie problemów z uprawnieniami:
 > ```
 > chmod +x ./build_suyu.sh
@@ -32,16 +36,9 @@ Preferowane odpalenie skryptu w katalogu domowym.
 > /Applications/suyu.app/Contents/MacOS/suyu >> suyu.log
 > ```
 >
-> Jeśli chcesz utworzyć plik dziennika zdarzeń:
-> ```
-> /Applications/suyu.app/Contents/MacOS/suyu >> suyu.log
-> ```
+> Plik dziennika znajdziesz w `~/.local/share/suyu/log/suyu_log.txt`!
 >
 > Sytuacja może ulec zmianie w przyszłości, gdy tylko MoltenVK doda wspracie dla większej ilości funkcji.
-
-## Sprawdź obecną kompatybilność:
-
-[Kompatybiliność](./assets/compatibility/compatibility_pl_PL.md)
 
 ## Contribution:
 
@@ -84,11 +81,11 @@ Notka: Pamiętaj o powtórzeniu kroku drugiego co jakiś czas, aby mieć najaktu
 
 ## Podziękowania:
 
--   Suyu's macOS build instructions archived [here](https://web.archive.org/web/20240113191459/https://yuzu-emu.org/wiki/building-for-macos/)
+-   Instrukcje kompilacji Suyu dla systemu macOS dostępnym [tutaj](https://git.suyu.dev/suyu/suyu/wiki/Building-for-macOS)
 
     ...oraz ChatGPT wraz GitHub Copilot za pomoc w upublicznieniu tego syfu.
 
--   [@shinra-electric](https://github.com/shinra-electric) za wszelkie poprawki do mojego pijackiego kodu! 🍻
+-   [@shinra-electric](https://github.com/shinra-electric) za wszelkie poprawki! 🍻
 
     Jeśli zostanę pozwany przez Big N, zapraszam na mój grób ^^
 
