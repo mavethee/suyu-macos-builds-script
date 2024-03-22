@@ -40,8 +40,7 @@ autoconf
 automake 
 boost 
 ccache 
-cmake 
-dylibbundler 
+cmake  
 ffmpeg 
 fmt 
 glslang 
@@ -90,6 +89,7 @@ fi
 echo -e "${PURPLE}Exporting necessary environment variables...${NC}"
 export LLVM_DIR=$(brew --prefix)/opt/llvm@17
 export FFMPEG_DIR=$(brew --prefix)/opt/ffmpeg
+export QT6_LOCATION=$(brew --prefix)/opt/qt
 
 # Create build folder
 echo -e "${PURPLE}Creating build folder...${NC}"
@@ -123,9 +123,15 @@ if [ $? -eq 0 ]; then
         rm -rf "/Applications/suyu.app"
     fi
 
-    # Bundle dependencies and codesign
-    echo -e "${PURPLE}Bundling and codesigning dependencies...${NC}"
-    dylibbundler -of -cd -b -x bin/suyu.app/Contents/MacOS/suyu -d bin/suyu.app/Contents/libs/
+    # Use macdeployq6 to copy Qt Frameworks. Also copies dylibs.
+    echo -e "${PURPLE}Bundling Qt6...${NC}"
+    # Bundle QtDBus.Framework manually because macdeployq6 won't do it
+    cp -R $QT6_LOCATION/lib/QtDBus.framework bin/suyu.app/Contents/Frameworks
+    macdeployqt6 bin/suyu.app
+    
+    # Codesign
+    echo -e "${PURPLE}Signing app bundle...${NC}"
+    codesign --force --deep --sign - bin/suyu.app
     
     # Move Suyu.app to /Applications
     echo -e "${PURPLE}Moving suyu.app to /Applications...${NC}"
