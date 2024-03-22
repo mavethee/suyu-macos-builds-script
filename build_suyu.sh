@@ -70,7 +70,7 @@ done
 # Clone the Suyu repository if not already cloned
 if [ ! -d "suyu" ]; then
     echo -e "${PURPLE}Cloning Suyu repository...${NC}"
-    git clone --recursive https://gitlab.com/suyu-emu/suyu.git/
+    git clone --recursive https://git.suyu.dev/suyu/suyu
     cd suyu
 else
     echo -e "${PURPLE}Suyu repository already exists. Updating...${NC}"
@@ -106,7 +106,8 @@ cmake .. -GNinja \
     -DSDL_ARMNEON=ON \
     -DENABLE_QT6=ON \
     -DENABLE_QT_TRANSLATION=ON \
-    -DSUYU_USE_EXTERNAL_VULKAN_HEADERS=OFF
+    -DSUYU_USE_EXTERNAL_VULKAN_HEADERS=OFF \
+    -DUSE_SYSTEM_MOLTENVK=OFF
 
 echo -e "${PURPLE}Building suyu...${NC}"
 

@@ -13,7 +13,7 @@ This script will build and compile Suyu for macOS on Apple Silicon.
 
 Get it from here!
 
-[![Download](https://img.shields.io/badge/Download-v0.0.8-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.8/build_suyu.sh)
+[![Download](https://img.shields.io/badge/Download-v0.0.9-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.9/build_suyu.sh)
 
 ## Usage:
 
