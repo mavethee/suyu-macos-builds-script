@@ -109,8 +109,6 @@ cmake .. -GNinja \
     -DSUYU_USE_EXTERNAL_VULKAN_HEADERS=OFF \
     -DUSE_SYSTEM_MOLTENVK=OFF
 
-echo -e "${PURPLE}Building suyu...${NC}"
-
 # Build Suyu using Ninja
 echo -e "${PURPLE}Building suyu using Ninja...${NC}"
 ninja
