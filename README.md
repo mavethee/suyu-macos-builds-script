@@ -21,7 +21,7 @@ After downloading, double click the script and follow the prompts.
 
 It is advised to run it from your home directory.
 
-#### You can check current macOS compatibility with apps and homebrews [here](./assets/compatibility/compatibility_pl_PL.md).
+#### You can check current macOS compatibility with apps and homebrews [here](./assets/compatibility/compatibility.md).
 
 > [!NOTE]
 > On a base M1, building takes ~6mins (measured including gathering needed dependencies which differs depending on your internet speed)
