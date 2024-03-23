@@ -107,7 +107,8 @@ cmake .. -GNinja \
     -DENABLE_QT6=ON \
     -DENABLE_QT_TRANSLATION=ON \
     -DSUYU_USE_EXTERNAL_VULKAN_HEADERS=OFF \
-    -DUSE_SYSTEM_MOLTENVK=OFF
+    -DUSE_SYSTEM_MOLTENVK=OFF \
+    -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 
 
 # Build Suyu using Ninja
 echo -e "${PURPLE}Building suyu using Ninja...${NC}"
