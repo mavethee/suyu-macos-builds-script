@@ -11,11 +11,15 @@ Here is a list of some games that have been tested and go in-game. It is not a c
 - Final Fantasy Pixel Remasters
 - GrimGrimoire
 - Hollow Knight
+- Metroid Dread 
+- Ninja Gaiden Sigma
+- Ninja Gaiden Sigma 2
 - Persona 5 Royal
 - Red Dead Redemption
 - Return of the Obra Dinn
 - Salt & Sanctuary
-
+- Street Fighter 30th Anniversary
+  
 ## Known non-working games:
 Here is a list of some games that have been tested and do not go in-game. It is not a complete list, there are probably more that don't work.
 
@@ -23,6 +27,7 @@ Here is a list of some games that have been tested and do not go in-game. It is 
 - Bloodstained: Ritual of the Night
 - Bravely Default II
 - Dark Souls
+- Dragon Ball Fighterz
 - Hades
 - Super Mario Odyssey
 - Hellblade: Senua's Sacrifice
@@ -38,8 +43,9 @@ Here is a list of some games that have been tested and do not go in-game. It is 
 - The Legend of Zelda: Breath of The Wild
 - The Wicher 3: Wild Hunt
 - Xenoblade Chronicles
-
+  
 ## Unknown regressions:
 Here is a list of games that definitely worked before but now they aren't. It is not a complete list, and probably will grow.
 
 - The Legend of Zelda: Link's Awakening
+- Metroid Prime Remastered
