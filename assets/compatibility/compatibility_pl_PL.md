@@ -27,14 +27,19 @@ Jest to lista wybranych przetestowanych gier które nie uruchamiają się wcale 
 - Bloodstained: Ritual of the Night
 - Bravely Default II
 - Dark Souls
+- Dragon Ball Fighterz
 - Hades
 - Super Mario Odyssey
 - Hellblade: Senua's Sacrifice
 - Hogwarts Legacy
+- Mortal Kombat 1
+- Naruto X Boruto Ultimate Ninja Storm Connections 
+- Ninja Gaiden 3: Razor's Edge
 - Ni no Kuni
 - Nier: Automata
 - Octopath Traveller I & II
 - Salt & Sacrifice
+- Sonic Frontiers
 - Sifu
 - Skyrim
 - The Legend of Grimrock
