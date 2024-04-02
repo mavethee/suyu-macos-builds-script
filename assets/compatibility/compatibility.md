@@ -60,7 +60,7 @@ This is a list of some games that have been tested and do not go in-game or have
 - Hitman: Blood Money
 - Hogwarts Legacy
 - Inside
-- Kindom Come: Deliverance
+- Kingdom Come: Deliverance
 - Mortal Kombat 1 & 11
 - Naruto X Boruto Ultimate Ninja Storm Connections 
 - Ninja Gaiden 3: Razor's Edge
