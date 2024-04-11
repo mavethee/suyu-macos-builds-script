@@ -4,13 +4,16 @@
 
 #### 🇵🇱 Czytasz polską wersje! Go to the 🇺🇸 English version [here](README.md).
 
-Ten skrypt pobierze wszystkie potrzebne rzeczy dla portu Suyu na macOS.
-
-Weź pod uwagę, żeby nie nastawiać się na wiele, w obecnym stanie nie jest to w pełni funkcjonalny port.
+> [!WARNING]
+> ~~Ten skrypt jest w celach eksperymentalnych.<br> 
+> Nie oczekuj wysokiej kompatybilności, jest to jeden z powodów,
+> dlaczego oryginalny projekt nie wydawał tego portu.~~<br>
+> Projekt obecnie jest martwy/brakuje mu kluczowych deweloperów, ostatnia [aktualizację](https://www.youtube.com/watch?v=UupnXolCO3E) w sprawie podsumowaną przez Mr Sujano.<br>
+> Sudachi script jest WIP jak coś :)
 
 #### Pobierz klikając w przycisk poniżej lub [na stronie z poszczególnymi wersjami skryptu](https://github.com/mavethee/suyu-macos-builds-script/releases) :)
 
-[![Pobierz](https://img.shields.io/badge/Download-v0.0.9-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.9/build_suyu.sh)
+[![Pobierz](https://img.shields.io/badge/Download-v0.0.10-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.10/build_suyu.sh)
 
 ## Użytkowanie:
 

@@ -7,13 +7,17 @@
 This script will build and compile Suyu for macOS on Apple Silicon.
 
 > [!WARNING]
-> This script is provided for experimentation purposes.<br> 
-> Don't expect high compatibility, there are reasons why parent project to Suyu didn't get official Mac build.<br>
+> ~~This script is provided for experimentation purposes.<br> 
+> Don't expect high compatibility, there are reasons why parent project to Suyu didn't get official Mac build.~~<br>
+> Project is dead, final [update](https://www.youtube.com/watch?v=UupnXolCO3E) on this case summarized by Mr Sujano<br>
+> Working on Sudachi script for now but yeah,
+> case feels stinky.
+> Working on Sudachi script, soonTM, folks.
 
 
 #### Get it by pressing the button below or via [Releases](https://github.com/mavethee/suyu-macos-builds-script/releases) page :)
 
-[![Download](https://img.shields.io/badge/Download-v0.0.9-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.9/build_suyu.sh)
+[![Download](https://img.shields.io/badge/Download-v0.0.10-brightgreen)](https://github.com/mavethee/suyu-macos-builds-script/releases/download/0.0.10/build_suyu.sh)
 
 ## Usage:
 
