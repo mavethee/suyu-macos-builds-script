@@ -76,8 +76,8 @@ else
     echo -e "${PURPLE}Suyu repository already exists. Updating...${NC}"
     cd suyu
 
-    echo -e "${PURPLE}Fetching latest changes...${NC}"
-    git fetch origin dev
+    echo -e "${PURPLE}Pulling latest changes...${NC}"
+    git pull origin dev
 
     echo -e "${PURPLE}Removing existing submodules...${NC}"
     git submodule deinit -f .
